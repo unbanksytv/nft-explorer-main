@@ -1,0 +1,135 @@
+<html>
+
+<head>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <style type="text/css"></style>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles/style.css" />
+  <title>NFT Explorer</title>
+  <script type="module" src="./dist/main.js"></script>
+
+
+  <!-- thumbnail code -->
+  <meta name="description" content="_" />
+  <meta name="title" property="og:title" content="NFT Explorer" />
+  <meta property="og:type" content="_" />
+  <meta name="image" property="og:image" content="https://live.staticflickr.com/65535/52022182153_2524cb8896_k.jpg" />
+  <meta name="description" property="og:description" content="_" />
+  <meta name="author" content="_" />
+
+  <!-- Moralis SDK code -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+</head>
+
+<body class="container">
+  <header class="header">
+    <nav class="nav-bar">
+      <div class="nav-contents">
+
+        <a target="_blank" href="https://kevinledev.github.io/nft-explorer/">
+          <img class="logo" src="./assets/logo-white.png" alt="imgname" />
+        </a>
+
+        <div id="nav-spacer-1">
+
+        </div>
+
+        <select id="dropdown" class="dropdown">
+          <option value="" disabled selected>Select Collection</option>
+          <option value="CoolCats">Cool Cats</option>
+          <option value="Doodles">Doodles</option>
+          <option value="BoredApeKennelClub">Bored Ape Kennel Club</option>
+          <option value="CoolmansUniverse">Coolmans Universe</option>
+          <option value="FroyoKittens">Froyo Kittens</option>
+          <option value="WonderPals">WonderPals</option>
+          <option value="MoonBirds">Moon Birds</option>
+          <option value="SushiVerse">SushiVerse</option>
+          <option value="Zukibirds">Zukibirds</option>
+        </select>
+
+        <div id="nav-spacer-2">
+        </div>
+
+        <div class="personal-links">
+          <i id="info-button" class="fa fa-info" style="text-decoration:none; color: #007BFE; font-size:33px;"></i>
+
+          <a target="_blank" href="https://www.linkedin.com/in/kvnle/" style="text-decoration: none; color: white">
+            <i id="linkedin" class="fa fa-linkedin"></i>
+          </a>
+          <a target="_blank" href="https://github.com/kevinledev" style="text-decoration: none; color: white">
+            <i class="fa fa-github"></i>
+          </a>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="collection-wrapper">
+    <div id="collection-name"></div>
+    <div id="sort-order">
+      NFT Rarity Ranking
+      <img class="verified" src="./assets/verified.svg" alt="imgname" height="28px" />
+    </div>
+  </div>
+
+  <div class="sort-wrapper">
+    <div class="jump-text-button">
+      <input id="jump-to" placeholder="Jump To Rank" type="number"></input>
+      <button id="jump-button">Go</button>
+    </div>
+    <div>
+      <select id="sort-by">
+        <option selected="selected" value="rank">Sort by: Rarity</option>
+        <option value="tokenIdInt">Sort by: Token ID</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="instructions-modal">
+    <div class="i-modal-box">
+      <span>
+        What is NFT Explorer?
+      </span>
+      <p class="i-desc">
+        NFT Explorer is an NFT gallery featuring over 100,000 NFTs from multiple popular projects that I have personally
+        curated. Each NFT is scored and ranked by my custom rarity script.
+      </p>
+      <span>
+        Instructions
+      </span>
+      <div class="steps">
+        <div>1. Select a project from the dropdown</div>
+        <div>2. Click on an NFT that catches your eye to reveal its traits</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal">
+    <div class="modal-box">
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+  <div id="gallery"></div>
+
+  <!-- <div class="load-more">
+      <button id="load-button">Load More</button>
+    </div> -->
+
+  <footer></footer>
+</body>
+
+</html>
